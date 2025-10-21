@@ -12,12 +12,12 @@ const ContinuousSwiper = () => {
         spaceBetween={20}
         loop={true}
         autoplay={{
-          delay: 0,            
+          delay: 0,
           disableOnInteraction: false,
         }}
-        speed={3000}              
-        freeMode={true}          
-        allowTouchMove={false}   
+        speed={3000}
+        freeMode={true}
+        allowTouchMove={false}
         breakpoints={{
           320: { slidesPerView: 1 },
           640: { slidesPerView: 2 },
@@ -27,13 +27,15 @@ const ContinuousSwiper = () => {
       >
         {skills.map((item) => (
           <SwiperSlide key={item.skillId}>
-            <div className="flex flex-col items-center justify-center rounded-xl p-4 shadow-lg shadow-gray-300">
+            <div className="flex flex-col items-center justify-center rounded-xl p-4 shadow-lg">
               <img
                 src={item.image}
                 alt={item.skillName}
                 className="w-full h-40 object-cover rounded-lg mb-2"
               />
-              <p className=" text-center text-2xl font-bold">{item.skillName}</p>
+              <p className=" text-center text-2xl font-bold">
+                {item.skillName}
+              </p>
             </div>
           </SwiperSlide>
         ))}
