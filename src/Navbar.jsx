@@ -6,7 +6,7 @@ import { FaRegUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
    const active =
-     "  text-green-500 rounded-md underline transition duration-300";
+     "  text-green-500 rounded-md  transition duration-300";
   
   const { user, logOut } = useContext(AuthContext)
   const navigate = useNavigate()
@@ -36,7 +36,14 @@ const links = (
         Home
       </NavLink>
     </li>
-
+    <li>
+      <NavLink
+        to="/allcourse"
+        className={({ isActive }) => (isActive ? active : undefined)}
+      >
+        All Course
+      </NavLink>
+    </li>
 
     {user && (
       <li>

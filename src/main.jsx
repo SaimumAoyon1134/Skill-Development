@@ -3,15 +3,16 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./Home.jsx"
-import Login from "./Login.jsx"
+import Home from "./Home.jsx";
+import Login from "./Login.jsx";
 import Register from "./Register.jsx";
 import AuthProvider from "./AuthProvider.jsx";
 import UpdateProfile from "./UpdateProfile.jsx";
 import PrivateRoute from "./PrivateRoute.jsx";
 import Order from "./Order.jsx";
 import MyProfile from "./MyProfile.jsx";
-
+import AllCourse from "./AllCourse.jsx";
+import SkillDetails from "./SkillDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -32,16 +33,24 @@ const router = createBrowserRouter([
       },
       {
         path: "update",
-        element:<UpdateProfile/>
+        element: <UpdateProfile />,
       },
       {
-        path: "order",
-        element:<PrivateRoute><Order></Order></PrivateRoute>
+        path: "allcourse",
+        element: <AllCourse />,
+      },
+      {
+        path: "allcourse/:id",
+        element: (
+          <PrivateRoute>
+            <SkillDetails />
+          </PrivateRoute>
+        ),
       },
       {
         path: "myprofile",
-        element:<MyProfile/>
-      }
+        element: <MyProfile />,
+      },
     ],
   },
 ]);
@@ -49,8 +58,6 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthProvider>
       <RouterProvider router={router} />
-      
     </AuthProvider>
   </StrictMode>
 );
-

@@ -12,23 +12,21 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import ContinuousSwiper from "./ContinuousSwiper";
+
 
 function App() {
-  const swiper = new Swiper('.swiper', {
 
-  modules: [Navigation, Pagination],
-
-});
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <ToastContainer position="bottom-right" autoClose={1000} />
       <div className="sticky top-0 z-50 bg-base-100">
         <Navbar />
       </div>
-      <Outlet />
+      <div className="flex-1">
+        <Outlet />
+      </div>
       <Footer />
-    </>
+    </div>
   );
 }
 
