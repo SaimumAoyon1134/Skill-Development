@@ -3,8 +3,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import skills from "../skills";
+import { useNavigate } from "react-router-dom";
 
 const ContinuousSwiper = () => {
+  const navigate = useNavigate()
   return (
     <div className="my-10">
       <Swiper
@@ -27,7 +29,11 @@ const ContinuousSwiper = () => {
       >
         {skills.map((item) => (
           <SwiperSlide key={item.skillId}>
-            <div className="flex flex-col items-center justify-center rounded-xl p-4 shadow-lg">
+            <div className="flex flex-col items-center justify-center rounded-xl p-4 shadow-lg "
+              onClick={() => {
+                console.log(item.skillId)
+              navigate(`allcourse/${item.skillId}`)
+            }}>
               <img
                 src={item.image}
                 alt={item.skillName}

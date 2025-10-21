@@ -3,12 +3,13 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthContext";
 import { toast } from "react-toastify";
 import { FaRegUserCircle } from "react-icons/fa";
+import Loading from "./Loading";
 
 const Navbar = () => {
    const active =
      "  text-green-500 rounded-md  transition duration-300";
   
-  const { user, logOut } = useContext(AuthContext)
+  const { user, logOut, isLoading } = useContext(AuthContext)
   const navigate = useNavigate()
 
   const onClickLogin = () => {
@@ -91,7 +92,9 @@ const links = (
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        {user ? (
+        {isLoading ? (
+          <span className="loading loading-spinner loading-xl"></span>
+        ) : user ? (
           <>
             <div
               className="tooltip tooltip-bottom"

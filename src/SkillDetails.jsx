@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useParams } from "react-router-dom";
 import skills from "../skills"; // assuming your skill data is in ../skills
 import { toast } from "react-toastify";
@@ -16,12 +16,21 @@ const SkillDetails = () => {
       </div>
     );
   }
+ const formRef = useRef(null);
 
+ const handleSubmit = (e) => {
+   e.preventDefault();
+   toast.success("Thank You, Successfully Booked");
+
+ 
+   formRef.current.reset();
+
+ 
+   document.getElementById("my_modal_5").close();
+ };
   return (
     <div className="max-w-5xl mx-auto px-6 py-12">
-
       <div className="flex flex-col md:flex-row bg-white shadow-xl rounded-2xl overflow-hidden">
-
         <div className="md:w-1/2">
           <img
             src={skill.image}
@@ -61,18 +70,51 @@ const SkillDetails = () => {
               </span>
             </span>
 
-                      <button className="px-6 py-2 bg-green-500 text-white rounded-xl shadow-md hover:bg-black transition-all duration-300"
-                          onClick={() => {
-                          toast.success("Thank you!! Successfully Enrolled..")
-                      }}>
-              Enroll Now
+            <button
+              className="btn"
+              onClick={() => document.getElementById("my_modal_5").showModal()}
+            >
+              Book Now
             </button>
+            <dialog
+              id="my_modal_5"
+              className="modal modal-bottom sm:modal-middle"
+            >
+              <form
+                ref={formRef}
+                onSubmit={handleSubmit}
+                className="modal-box flex flex-col gap-4"
+              >
+                <h3 className="font-bold text-lg text-center">Book Skill</h3>
+                <p className="py-2">
+                  Please enter your details to book this skill.
+                </p>
+
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  className="input input-bordered w-full"
+                  name="name"
+                  required
+                />
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  className="input input-bordered w-full"
+                  name="email"
+                  required
+                />
+
+                <div className="modal-action">
+                  <button type="submit" className="btn">
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </dialog>
           </div>
         </div>
       </div>
-
-    
-      
     </div>
   );
 };
