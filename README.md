@@ -1,12 +1,12 @@
-#  Skill Dev — Online Skill Learning Platform
+#  SkillSwap – A Local Skill Exchange Platform
 
 ##  Live URL
-[🔗 Visit Skill Dev Live](https://my-application-40e3b.web.app/)
+[🔗 Visit SkillSwap Live](https://my-application-40e3b.web.app/)
 
 ---
 
 ## 📘 Project Purpose
-**Skill Dev** is an interactive skill-learning platform where users can explore online courses, view skill details, and manage their learning profiles.  
+**SkillSwap** is an interactive skill-learning platform where users can explore online courses, view skill details, and manage their learning profiles.  
 It supports user authentication, protected routes, and a smooth, modern UI built with React and Tailwind CSS.
 
 ---

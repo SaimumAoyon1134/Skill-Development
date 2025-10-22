@@ -87,7 +87,7 @@ const links = (
             {links}
           </ul>
         </div>
-        <NavLink to={"/"} className="btn btn-ghost text-xl"> <img  className="w-[40px] h-[40px]"src={image} alt="" />Skill Dev</ NavLink >
+        <NavLink to={"/"} className="btn btn-ghost text-xl"> <img  className="w-[40px] h-[40px]"src={image} alt="" />SkillSwap</ NavLink >
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
