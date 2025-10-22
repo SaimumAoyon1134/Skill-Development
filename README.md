@@ -1,19 +1,49 @@
-# React + Vite
+#  SkillHub — Online Skill Learning Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+##  Live URL
+[🔗 Visit SkillHub Live](https://my-application-40e3b.web.app/)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📘 Project Purpose
+**Skill Dev** is an interactive skill-learning platform where users can explore online courses, view skill details, and manage their learning profiles.  
+It supports user authentication, protected routes, and a smooth, modern UI built with React and Tailwind CSS.
 
-## React Compiler
+---
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+##  Key Features
+✅ **User Authentication** — Register, Login, Logout, and Forgot Password using Firebase Authentication  
+✅ **Private Routes** — Access course details only after logging in  
+✅ **Dynamic Course Listing** — View all skills with detailed information pages  
+✅ **Swiper Slider** — Smooth and responsive course/category carousel  
+✅ **Profile Management** — Update and view user profile information  
+✅ **Route-Based Loading** — Displays a loading spinner between routes  
+✅ **Responsive Design** — Works seamlessly on desktop and mobile  
+✅ **Toast Notifications** — Instant success/error feedback using Toastify  
+✅ **Extra Section** — Explore Popular Categories added to homepage  
 
-Note: This will impact Vite dev & build performances.
+---
 
-## Expanding the ESLint configuration
+## Tech Stack
+**Frontend:** React.js, React Router DOM, Tailwind CSS, DaisyUI, Swiper.js  
+**Authentication:** Firebase Authentication  
+**Deployment:** Firebase
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# Skill-Development
+---
+
+## 📦 NPM Packages Used
+
+| Package Name | Purpose |
+|---------------|----------|
+| `react` | Core library for UI development |
+| `react-router-dom` | Routing and navigation |
+| `firebase` | Authentication & backend integration |
+| `react-hot-toast` | Toast notifications |
+| `animate.css` | Animation effects |
+| `swiper` | Interactive carousel/slider |
+| `daisyui` | Tailwind CSS UI components |
+| `tailwindcss` | Utility-first CSS framework |
+| `@vitejs/plugin-react` | Vite React plugin |
+| `vite` | Fast build tool for development |
+
+
