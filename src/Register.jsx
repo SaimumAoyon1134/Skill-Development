@@ -38,6 +38,8 @@ const Register = () => {
         console.log("ok");
         setSuccess(true);
         e.target.reset();
+        navigate("/");
+
       })
       .catch((error) => {
         setError("Please Set Properly");
