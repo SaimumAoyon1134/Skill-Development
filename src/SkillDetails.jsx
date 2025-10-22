@@ -105,7 +105,10 @@ const SkillDetails = () => {
                   required
                 />
 
-                <div className="modal-action">
+                <div className="modal-action flex flex-row justify-between">
+                  <button className="btn " onClick={() => {
+                    document.getElementById("my_modal_5").close();
+                  }}>Close</button>
                   <button type="submit" className="btn">
                     Submit
                   </button>

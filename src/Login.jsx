@@ -73,7 +73,7 @@ const Login = () => {
               <div className="relative">
                 <input
                   type={showPassword ? "text" : "password"}
-                  className="input pr-10 h-12" 
+                  className="input pr-10 h-12"
                   placeholder="Password"
                   name="password"
                 />
@@ -84,9 +84,18 @@ const Login = () => {
                   {showPassword ? <FaEyeSlash /> : <FaEye />}
                 </span>
               </div>
-              <div onClick={handleForgetPassword}>
-                <a className="link link-hover underline">Forgot password?</a>
-              </div>
+              <p className="text-center mt-2 text-sm">
+                <button
+                  type="button"
+                  onClick={() => {
+                    const email = emailRef.current?.value || "";
+                    navigate("/forget-password", { state: { email } });
+                  }}
+                  className="text-blue-500 hover:text-blue-700 font-semibold"
+                >
+                  Forgot Password?
+                </button>
+              </p>
 
               <button className="btn btn-neutral mt-4">Login</button>
               <button

@@ -16,8 +16,8 @@ const Home = () => {
   return (
     <div className="">
       <ContinuousSwiper />
+      <PopularCategories />
       <PopularSkills />
-      <PopularCategories/>
     </div>
   );
 }

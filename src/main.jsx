@@ -13,6 +13,7 @@ import Order from "./Order.jsx";
 import MyProfile from "./MyProfile.jsx";
 import AllCourse from "./AllCourse.jsx";
 import SkillDetails from "./SkillDetails.jsx";
+import ForgetPassword from "./ForgotPassword.jsx";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: "myprofile",
         element: <MyProfile />,
+      },
+      {
+        path: "/forget-password",
+        element: <ForgetPassword/>
       },
     ],
   },

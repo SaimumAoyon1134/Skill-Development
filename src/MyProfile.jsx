@@ -32,7 +32,7 @@ const MyProfile = () => {
         <div className="overflow-x-auto mt-6">
           <table className="table w-full max-w-md mx-auto bg-base-100 shadow-md rounded-xl">
             <thead>
-              <tr className="bg-neutral text-neutral-content">
+              <tr className="bg-gradient-to-r from-blue-400 via-gray-700 to-blue-950 text-neutral-content">
                 <th colSpan={2} className="text-center text-lg font-semibold">
                   My Information
                 </th>
