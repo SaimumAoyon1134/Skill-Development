@@ -2,6 +2,7 @@ import React from "react";
 
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import image from "./image.png"
 import XIcon from "@mui/icons-material/X";
 
 const Footer = () => {
@@ -9,8 +10,8 @@ const Footer = () => {
     <div className="bg-[#001931] text-white p-[3rem] mt-2 ">
       <div className="flex justify-between mb-[1rem] flex-col md:flex-row">
         <div className="md:flex flex-col hidden  align-center items-center">
-          {/* <img src={imageCopy} className="w-[30px] rounded-1xl" alt="" /> */}
-          <p className="px-[1rem]">My Apps</p>
+          <img src={image} className="w-[60px] rounded-1xl" alt="" />
+          <p className="px-[1rem]">Skill Dev</p>
           <p className="px-[1rem] text-gray-400">Contacts:0123456789</p>
         </div>
         <div className="md:w-[30%]">

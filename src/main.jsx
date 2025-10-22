@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+import { StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
@@ -14,32 +14,18 @@ import MyProfile from "./MyProfile.jsx";
 import AllCourse from "./AllCourse.jsx";
 import SkillDetails from "./SkillDetails.jsx";
 import ForgetPassword from "./ForgotPassword.jsx";
+import Loading from "./Loading.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
-      {
-        index: true,
-        element: <Home />,
-      },
-      {
-        path: "login",
-        element: <Login />,
-      },
-      {
-        path: "register",
-        element: <Register />,
-      },
-      {
-        path: "update",
-        element: <UpdateProfile />,
-      },
-      {
-        path: "allcourse",
-        element: <AllCourse />,
-      },
+      { index: true, element: <Home /> },
+      { path: "login", element: <Login /> },
+      { path: "register", element: <Register /> },
+      { path: "update", element: <UpdateProfile /> },
+      { path: "allcourse", element: <AllCourse /> },
       {
         path: "allcourse/:id",
         element: (
@@ -48,21 +34,18 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      {
-        path: "myprofile",
-        element: <MyProfile />,
-      },
-      {
-        path: "/forget-password",
-        element: <ForgetPassword/>
-      },
+      { path: "myprofile", element: <MyProfile /> },
+      { path: "forget-password", element: <ForgetPassword /> },
     ],
   },
 ]);
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthProvider>
-      <RouterProvider router={router} />
+      <Suspense fallback={<Loading />}>
+        <RouterProvider router={router} />
+      </Suspense>
     </AuthProvider>
   </StrictMode>
 );

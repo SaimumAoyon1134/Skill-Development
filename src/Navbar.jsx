@@ -4,6 +4,7 @@ import { AuthContext } from "./AuthContext";
 import { toast } from "react-toastify";
 import { FaRegUserCircle } from "react-icons/fa";
 import Loading from "./Loading";
+import image from "./image.png"
 
 const Navbar = () => {
    const active =
@@ -86,7 +87,7 @@ const links = (
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">My Apps</a>
+        <NavLink to={"/"} className="btn btn-ghost text-xl"> <img  className="w-[40px] h-[40px]"src={image} alt="" />Skill Dev</ NavLink >
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>

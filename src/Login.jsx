@@ -10,7 +10,7 @@ const Login = () => {
   const [error, setError] = useState(null);
   const [showPassword, setShowPassword] = useState(false); // new state
   const navigate = useNavigate();
-  const location = useLocation()
+  const location = useLocation();
 
   const from = location.state?.from?.pathname || "/";
 
@@ -23,7 +23,7 @@ const Login = () => {
       toast.error("Please enter your email first!");
     }
   };
-
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
   const handleSubmit = (e) => {
     e.preventDefault();
     setError(null);
@@ -35,13 +35,19 @@ const Login = () => {
       setError("Please give correct email and password!!");
       return;
     }
+    if (!passwordRegex.test(password)) {
+      setError(
+        "Password must contain at least one uppercase letter, one lowercase letter, and be 6+ characters long."
+      );
+      return;
+    }
 
     signIn(email, password)
       .then(() => {
         toast.success("Successfully Logged In!");
         e.target.reset();
-        console.log("Location" ,location)
-       navigate(from, { replace: true });
+        console.log("Location", location);
+        navigate(from, { replace: true });
       })
       .catch(() => {
         setError("Invalid Credentials!!");

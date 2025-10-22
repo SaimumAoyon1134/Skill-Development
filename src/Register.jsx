@@ -1,14 +1,21 @@
 import React, { useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase.init";
 import { AuthContext } from "./AuthContext";
+import { FaGoogle } from "react-icons/fa";
 
 const Register = () => {
-  const { signUp } = useContext(AuthContext)
+   const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+  const navigate = useNavigate();
+  const { signUp,googleSignIn } = useContext(AuthContext)
   const [error, setError] = useState(null);
     const [success, setSuccess] = useState(false);
-   
+    const handleSignGoogle = () => {
+      googleSignIn();
+      navigate("/");
+    };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setError(null);
@@ -19,6 +26,13 @@ const Register = () => {
       setError("Please give email and password!!");
       return;
     }
+      if (!passwordRegex.test(password)) {
+        setError(
+          "Password must contain at least one uppercase letter, one lowercase letter, and be 6+ characters long."
+        );
+        return;
+      }
+
     signUp(email, password)
       .then((result) => {
         console.log("ok");
@@ -53,6 +67,13 @@ const Register = () => {
               />
 
               <button className="btn btn-neutral mt-4">Register</button>
+                <button
+                              type="button"
+                              className="btn btn-neutral mt-4 flex items-center justify-center gap-2"
+                              onClick={handleSignGoogle}
+                            >
+                              <FaGoogle /> Sign Up With Google
+                            </button>
               {error && <p className="text-red-500">{error}</p>}
               {success && (
                 <p className="text-green-500">Successfully Account Created!!</p>
