@@ -17,9 +17,7 @@ const UpdateProfile = () => {
 
 
   }
- if (isLoading) {
-   return <Loading></Loading>;
- }
+
   return (
     <div className="hero bg-base-200 min-h-screen">
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
