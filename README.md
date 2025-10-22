@@ -1,7 +1,7 @@
-#  SkillHub — Online Skill Learning Platform
+#  Skill Dev — Online Skill Learning Platform
 
 ##  Live URL
-[🔗 Visit SkillHub Live](https://my-application-40e3b.web.app/)
+[🔗 Visit Skill Dev Live](https://my-application-40e3b.web.app/)
 
 ---
 
