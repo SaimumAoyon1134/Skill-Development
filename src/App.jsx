@@ -6,7 +6,7 @@ import Navbar from "./Navbar";
 import { Outlet, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import Footer from "./Footer";
-
+import { Toaster } from "react-hot-toast";
 import Swiper from "swiper";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -32,6 +32,7 @@ function App() {
   return (
     <div className="flex flex-col min-h-screen">
       <ToastContainer position="bottom-right" autoClose={1000} />
+      <Toaster position="top-center" reverseOrder={false} />
       <div className="sticky top-0 z-50 bg-base-100">
         <Navbar />
       </div>

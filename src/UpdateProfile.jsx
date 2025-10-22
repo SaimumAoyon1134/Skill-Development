@@ -3,17 +3,24 @@ import { AuthContext } from './AuthContext'
 import Loading from './Loading'
 import { useNavigate } from 'react-router-dom'
 import "animate.css";
+import toast, { Toaster } from "react-hot-toast";
+
 
 const UpdateProfile = () => {
-  const navigate =useNavigate()
+  const navigate = useNavigate()
+
   const {update,isLoading} =useContext(AuthContext)
   const handleSubmit = (e) => { 
     e.preventDefault()
     const name = e.target.name.value;
     const image = e.target.image.value;
     update(name, image)
+    toast.success("Updated Successfully!!");
     e.target.reset()
-    navigate("/myprofile")
+
+   setTimeout(() => {
+     navigate("/myprofile");
+   }, 1000);
 
 
 
@@ -21,6 +28,7 @@ const UpdateProfile = () => {
 
   return (
     <div className="hero bg-base-200 min-h-screen animate__animated animate__fadeInDown">
+      <Toaster position="top-center" reverseOrder={false} />
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
         <div className="card-body">
           <form onSubmit={handleSubmit}>

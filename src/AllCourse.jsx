@@ -3,11 +3,13 @@ import skills from "../skills";
 import "animate.css";
 import { useNavigate } from "react-router-dom";
 
+
 const AllCourse = () => {
-  const navigate = useNavigate(); // ✅ must be inside component
+  const navigate = useNavigate(); 
 
   return (
     <div className="animate__animated animate__fadeInRight">
+     
       <section>
         <h1 className="text-3xl font-bold mb-6 p-4">All Skills</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-4 gap-6">

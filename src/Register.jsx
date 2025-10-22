@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase.init";
 import { AuthContext } from "./AuthContext";
-import { FaGoogle } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import "animate.css";
 const Register = () => {
    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
@@ -15,6 +15,7 @@ const Register = () => {
       googleSignIn();
       navigate("/");
     };
+  const [showPassword, setShowPassword] = useState(false); 
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -69,12 +70,20 @@ const Register = () => {
                   name="email"
                 />
                 <label className="label">Password</label>
-                <input
-                  type="password"
-                  className="input"
-                  placeholder="Password"
-                  name="password"
-                />
+                 <div className="relative">
+                                  <input
+                                    type={showPassword ? "text" : "password"}
+                                    className="input pr-10 h-12"
+                                    placeholder="Password"
+                                    name="password"
+                                  />
+                                  <span
+                                    className="absolute right-10 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer"
+                                    onClick={() => setShowPassword(!showPassword)}
+                                  >
+                                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                                  </span>
+                                </div>
                 <label className="label">Name</label>
                 <input
                   type="text"

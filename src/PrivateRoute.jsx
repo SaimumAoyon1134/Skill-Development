@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { AuthContext } from "./AuthContext";
 import { Navigate, useLocation } from "react-router-dom";
-
+import toast, { Toaster } from "react-hot-toast";
 const PrivateRoute = ({ children }) => {
   const { user, isLoading } = useContext(AuthContext);
+  const notify = () => toast("Must Have to login for this!!");
   const location = useLocation();
   if (isLoading) {
     return (

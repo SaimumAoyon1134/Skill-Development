@@ -8,7 +8,7 @@ const Login = () => {
   const emailRef = useRef("");
   const { signIn, reset, googleSignIn } = useContext(AuthContext);
   const [error, setError] = useState(null);
-  const [showPassword, setShowPassword] = useState(false); // new state
+  const [showPassword, setShowPassword] = useState(false); 
   const navigate = useNavigate();
   const location = useLocation();
 
