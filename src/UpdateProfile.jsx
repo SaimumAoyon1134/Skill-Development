@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { AuthContext } from './AuthContext'
 import Loading from './Loading'
 import { useNavigate } from 'react-router-dom'
+import "animate.css";
 
 const UpdateProfile = () => {
   const navigate =useNavigate()
@@ -19,7 +20,7 @@ const UpdateProfile = () => {
   }
 
   return (
-    <div className="hero bg-base-200 min-h-screen">
+    <div className="hero bg-base-200 min-h-screen animate__animated animate__fadeInDown">
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
         <div className="card-body">
           <form onSubmit={handleSubmit}>
@@ -38,11 +39,9 @@ const UpdateProfile = () => {
                 className="input"
                 placeholder="Your Image URL"
                 name="image"
-              
               />
 
               <button className="btn btn-neutral mt-4">Update </button>
-             
             </fieldset>
           </form>
         </div>

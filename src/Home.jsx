@@ -4,6 +4,7 @@ import ContinuousSwiper from './ContinuousSwiper';
 import PopularSkills from './PopularSkills';
 import Loading from './Loading';
 import PopularCategories from './PopularCategories';
+import "animate.css"
 
 const Home = () => {
   const { user, isLoading } = useContext(AuthContext)
@@ -14,7 +15,7 @@ const Home = () => {
   }
   
   return (
-    <div className="">
+    <div className="animate__animated animate__fadeInLeft">
       <ContinuousSwiper />
       <PopularCategories />
       <PopularSkills />

@@ -3,6 +3,7 @@ import { AuthContext } from "./AuthContext";
 import { FaRegUserCircle } from "react-icons/fa";
 import { Navigate, useNavigate } from "react-router-dom";
 import Loading from "./Loading";
+import "animate.css";
 
 const MyProfile = () => {
     const navigate =useNavigate()
@@ -16,7 +17,7 @@ const MyProfile = () => {
         );
       }
   return (
-    <div className="flex flex-col items-center justify-center mt-3">
+    <div className="flex flex-col items-center justify-center mt-3 animate__animated animate__fadeInDown">
       <div className="w-[100px] h-[100px] ">
         {user?.photoURL ? (
           <img
@@ -32,7 +33,7 @@ const MyProfile = () => {
         <div className="overflow-x-auto mt-6">
           <table className="table w-full max-w-md mx-auto bg-base-100 shadow-md rounded-xl">
             <thead>
-              <tr className="bg-gradient-to-r from-blue-400 via-gray-700 to-blue-950 text-neutral-content">
+              <tr className="bg-black text-neutral-content">
                 <th colSpan={2} className="text-center text-lg font-semibold">
                   My Information
                 </th>

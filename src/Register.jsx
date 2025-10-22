@@ -4,11 +4,11 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase.init";
 import { AuthContext } from "./AuthContext";
 import { FaGoogle } from "react-icons/fa";
-
+import "animate.css";
 const Register = () => {
    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
   const navigate = useNavigate();
-  const { signUp,googleSignIn } = useContext(AuthContext)
+  const { signUp,googleSignIn, update } = useContext(AuthContext)
   const [error, setError] = useState(null);
     const [success, setSuccess] = useState(false);
     const handleSignGoogle = () => {
@@ -22,6 +22,9 @@ const Register = () => {
     setSuccess(false);
     const email = e.target.email.value;
     const password = e.target.password.value;
+    const name = e.target.name.value;
+    const image = e.target.image.value;
+    
     if (!email || !password) {
       setError("Please give email and password!!");
       return;
@@ -37,6 +40,9 @@ const Register = () => {
       .then((result) => {
         console.log("ok");
         setSuccess(true);
+        if (name || image) {
+          update(name, image);
+        }
         e.target.reset();
         navigate("/");
 
@@ -48,49 +54,67 @@ const Register = () => {
     
   };
   return (
-    <div className="hero bg-base-200 min-h-screen">
-      <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-        <div className="card-body">
-          <form onSubmit={handleSubmit}>
-            <fieldset className="fieldset">
-              <label className="label">Email</label>
-              <input
-                type="email"
-                className="input"
-                placeholder="Email"
-                name="email"
-              />
-              <label className="label">Password</label>
-              <input
-                type="password"
-                className="input"
-                placeholder="Password"
-                name="password"
-              />
-
-              <button className="btn btn-neutral mt-4">Register</button>
+    <div className=" animate__animated animate__fadeInDown">
+      <h1 className="mt-4 font-bold text-3xl text-center ">Register Now!!</h1>
+      <div className="hero ">
+        <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+          <div className="card-body">
+            <form onSubmit={handleSubmit}>
+              <fieldset className="fieldset">
+                <label className="label">Email</label>
+                <input
+                  type="email"
+                  className="input"
+                  placeholder="Email"
+                  name="email"
+                />
+                <label className="label">Password</label>
+                <input
+                  type="password"
+                  className="input"
+                  placeholder="Password"
+                  name="password"
+                />
+                <label className="label">Name</label>
+                <input
+                  type="text"
+                  className="input"
+                  placeholder="Your Name"
+                  name="name"
+                />
+                <label className="label">Image</label>
+                <input
+                  type="text"
+                  className="input"
+                  placeholder="Your Image URL"
+                  name="image"
+                />
+                <button className="btn btn-neutral mt-4">Register</button>
                 <button
-                              type="button"
-                              className="btn btn-neutral mt-4 flex items-center justify-center gap-2"
-                              onClick={handleSignGoogle}
-                            >
-                              <FaGoogle /> Sign Up With Google
-                            </button>
-              {error && <p className="text-red-500">{error}</p>}
-              {success && (
-                <p className="text-green-500">Successfully Account Created!!</p>
-              )}
-            </fieldset>
-          </form>
-          <p>
-            Already have any Account?{" "}
-            <NavLink
-              to="/login"
-              className="text-blue-400 hover:text-blue-700 font-bold underline"
-            >
-              Sign in Now!!!
-            </NavLink>
-          </p>
+                  type="button"
+                  className="btn btn-neutral mt-4 flex items-center justify-center gap-2"
+                  onClick={handleSignGoogle}
+                >
+                  <FaGoogle /> Sign Up With Google
+                </button>
+                {error && <p className="text-red-500">{error}</p>}
+                {success && (
+                  <p className="text-green-500">
+                    Successfully Account Created!!
+                  </p>
+                )}
+              </fieldset>
+            </form>
+            <p>
+              Already have any Account?{" "}
+              <NavLink
+                to="/login"
+                className="text-blue-400 hover:text-blue-700 font-bold underline"
+              >
+                Sign in Now!!!
+              </NavLink>
+            </p>
+          </div>
         </div>
       </div>
     </div>
