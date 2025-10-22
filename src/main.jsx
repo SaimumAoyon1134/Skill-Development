@@ -15,6 +15,7 @@ import AllCourse from "./AllCourse.jsx";
 import SkillDetails from "./SkillDetails.jsx";
 import ForgetPassword from "./ForgotPassword.jsx";
 import Loading from "./Loading.jsx";
+import Invalid from "./Invalid.jsx";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,7 @@ const router = createBrowserRouter([
       },
       { path: "myprofile", element: <MyProfile /> },
       { path: "forget-password", element: <ForgetPassword /> },
+      { path: "*", element: <Invalid/>},
     ],
   },
 ]);
