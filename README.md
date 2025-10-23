@@ -5,7 +5,7 @@
 
 ---
 
-## 📘 Project Purpose
+##  Project Purpose
 **SkillSwap** is an interactive skill-learning platform where users can explore online courses, view skill details, and manage their learning profiles.  
 It supports user authentication, protected routes, and a smooth, modern UI built with React and Tailwind CSS.
 
@@ -31,7 +31,7 @@ It supports user authentication, protected routes, and a smooth, modern UI built
 
 ---
 
-## 📦 NPM Packages Used
+##  NPM Packages Used
 
 | Package Name | Purpose |
 |---------------|----------|

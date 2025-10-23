@@ -47,6 +47,7 @@ const UpdateProfile = () => {
                 className="input"
                 placeholder="Your Image URL"
                 name="image"
+                required
               />
 
               <button className="btn btn-neutral mt-4">Update </button>
