@@ -49,8 +49,8 @@ const reviews = [
 
 export default function ReviewSection() {
   return (
-    <div className="py-6 px-0 bg-gray-50">
-      <h2 className="text-3xl font-bold px-4 text-left mb-10 text-gray-800">
+    <div className="py-6 px-0 ">
+      <h2 className="text-3xl font-bold px-4 text-left mb-10">
         What Our Learners Say
       </h2>
 
