@@ -5,6 +5,8 @@ import PopularSkills from './PopularSkills';
 import Loading from './Loading';
 import PopularCategories from './PopularCategories';
 import "animate.css"
+import ReviewSection from './ReviewSection';
+
 
 const Home = () => {
   const { user, isLoading } = useContext(AuthContext)
@@ -19,6 +21,7 @@ const Home = () => {
       <ContinuousSwiper />
       <PopularCategories />
       <PopularSkills />
+      <ReviewSection/>
     </div>
   );
 }
