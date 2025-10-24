@@ -74,7 +74,7 @@ export default function ReviewSection() {
       >
         {reviews.map((r) => (
           <SwiperSlide key={r.id}>
-            <div className="bg-white border border-black   shadow-gray-600 rounded-2xl p-6 flex flex-col items-center text-center hover:shadow-lg transition-shadow duration-300 h-[250px]">
+            <div className="bg-white  shadow-gray-600 rounded-2xl p-6 flex flex-col items-center text-center hover:shadow-lg transition-shadow duration-300 h-[250px]">
               <h3 className="text-lg font-semibold text-gray-800">{r.name}</h3>
               <p className="text-sm text-gray-500 mb-3">{r.role}</p>
               <p className="text-gray-600 italic">“{r.review}”</p>
