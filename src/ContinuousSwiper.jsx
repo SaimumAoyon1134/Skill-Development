@@ -39,7 +39,7 @@ const ContinuousSwiper = () => {
                 alt={item.skillName}
                 className="w-full h-40 object-cover rounded-lg mb-2"
               />
-              <p className=" text-center text-2xl font-bold">
+              <p className=" text-center text-2xl text-black font-bold">
                 {item.skillName}
               </p>
             </div>
