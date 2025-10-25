@@ -27,9 +27,11 @@ const UpdateProfile = () => {
   }
 
   return (
-    <div className="hero bg-base-200 min-h-screen animate__animated animate__fadeInDown">
+    <div className="hero my-auto  animate__animated animate__fadeInDown">
       <Toaster position="top-center" reverseOrder={false} />
+
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+        <h1 className='text-2xl mt-2 text-center font-bold'>Update Your Profile</h1>
         <div className="card-body">
           <form onSubmit={handleSubmit}>
             <fieldset className="fieldset">
