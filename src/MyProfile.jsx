@@ -51,7 +51,7 @@ const MyProfile = () => {
 
       <div className="flex flex-col items-center">
         <div className="overflow-x-auto mt-6">
-          <table className="table bg-gray-200 w-full max-w-md mx-auto shadow-md rounded-xl">
+          <table className="table w-full max-w-md mx-auto shadow-md rounded-xl">
             <thead>
               <tr>
                 <th
