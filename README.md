@@ -45,5 +45,6 @@ It supports user authentication, protected routes, and a smooth, modern UI built
 | `tailwindcss` | Utility-first CSS framework |
 | `@vitejs/plugin-react` | Vite React plugin |
 | `vite` | Fast build tool for development |
+| `gsap` | Animation effects |
 
 
